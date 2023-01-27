@@ -29,6 +29,7 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setIndex(0)
     searchBook()
     e.target.reset()
   }
@@ -76,9 +77,10 @@ const Search = () => {
         {booksCount === -1 ? null : booksCount === 0 ? (
           "Aucun résultat pour votre recherche"
         ) : (
-          <p>{`Nombres de résultats : ${booksCount}`}</p>
+          <p>{`${booksCount} résultats`}</p>
         )}
       </div>
+      {booksCount > 0 && <Books books={books} />}
       {booksCount > 0 && (
         <div className="p-2 flex items-center justify-center">
           <button
@@ -102,7 +104,6 @@ const Search = () => {
           </button>
         </div>
       )}
-      {booksCount > 0 && <Books books={books} />}
     </>
   )
 }

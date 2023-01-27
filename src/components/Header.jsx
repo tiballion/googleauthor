@@ -6,7 +6,11 @@ const Header = () => {
       <h1>Google Author </h1>
       <h3 className="pl-2 text-neutral-400">
         API de recherche Google | Made by{" "}
-        <a href="https://github.com/tiballion" target="_blank">
+        <a
+          href="https://github.com/tiballion"
+          target="_blank"
+          className="text-indigo-500"
+        >
           Timothée
         </a>
       </h3>

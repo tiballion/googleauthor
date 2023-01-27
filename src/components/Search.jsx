@@ -4,7 +4,7 @@ import Books from "./Books"
 
 const Search = () => {
   const [search, setSearch] = useState("")
-  const [booksCount, setBooksCount] = useState(0)
+  const [booksCount, setBooksCount] = useState(-1)
   const [books, setBooks] = useState([])
   const [index, setIndex] = useState(0)
 
@@ -72,11 +72,13 @@ const Search = () => {
           />
         </form>
       </div>
-      <p className="ml-3">
-        {booksCount
-          ? `Number of results : ${booksCount}`
-          : "Aucun résultat pour votre recherche"}
-      </p>
+      <div className="ml-3">
+        {booksCount === -1 ? null : booksCount === 0 ? (
+          "Aucun résultat pour votre recherche"
+        ) : (
+          <p>{`Nombres de résultats : ${booksCount}`}</p>
+        )}
+      </div>
       {booksCount > 0 && (
         <div className="p-2 flex items-center justify-center">
           <button
@@ -100,7 +102,7 @@ const Search = () => {
           </button>
         </div>
       )}
-      {books.length > 0 && <Books books={books} />}
+      {booksCount > 0 && <Books books={books} />}
     </>
   )
 }

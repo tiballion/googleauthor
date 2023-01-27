@@ -2,7 +2,7 @@ import React from "react"
 
 const Header = () => {
   return (
-    <header className="bg-zinc-800 p-3 m-2 rounded-md">
+    <header className="bg-zinc-800 p-3 m-2 rounded-md flex flex-col items-center">
       <h1>Google Author </h1>
       <h3 className="pl-2 text-neutral-400">
         API de recherche Google | Made by{" "}

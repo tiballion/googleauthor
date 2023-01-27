@@ -53,19 +53,22 @@ const Search = () => {
   return (
     <>
       <div className="p-2">
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={handleSubmit}
+          className="flex justify-center align-middle items-center"
+        >
           <label>
             <input
               type="text"
               placeholder="Rechercher un livre"
-              className="w-full p-2 rounded-md"
+              className="p-2 m-1 rounded-md"
               onChange={handleChange}
             />
           </label>
           <input
             type="submit"
             value="Submit"
-            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mt-2"
+            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-1 border border-gray-400 rounded shadow"
           />
         </form>
       </div>

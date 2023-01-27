@@ -7,3 +7,7 @@ Libraries used:
 - React
 - TailwindCSS
 - React Icons
+
+Problèmes encontrés :
+
+- Certains livres n'avait pas d'auteur ni d'image

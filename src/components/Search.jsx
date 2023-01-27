@@ -72,7 +72,7 @@ const Search = () => {
           />
         </form>
       </div>
-      <div className="ml-3">
+      <div className="ml-3 flex justify-center">
         {booksCount === -1 ? null : booksCount === 0 ? (
           "Aucun résultat pour votre recherche"
         ) : (

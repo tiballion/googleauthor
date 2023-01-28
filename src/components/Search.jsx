@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react"
+import {
+  AiOutlineArrowLeft,
+  AiOutlineArrowRight,
+  AiOutlineSearch,
+} from "react-icons/ai"
 import axios from "axios"
 import Books from "./Books"
 
@@ -69,11 +74,9 @@ const Search = () => {
               onChange={handleChange}
             />
           </label>
-          <input
-            type="submit"
-            value="Submit"
-            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-1 border border-gray-400 rounded shadow"
-          />
+          <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-1 border border-gray-400 rounded shadow">
+            <AiOutlineSearch size={22} />
+          </button>
         </form>
       </div>
       <div className="ml-3 flex justify-center">
@@ -94,7 +97,7 @@ const Search = () => {
               index < 10 ? "cursor-not-allowed opacity-50" : ""
             }`}
           >
-            Previous page
+            <AiOutlineArrowLeft />
           </button>
           <h4>{`${Math.floor(index / 10) + 1}/${
             Math.floor(booksCount / 10) + 1
@@ -105,7 +108,7 @@ const Search = () => {
               booksCount < index + 10 ? "cursor-not-allowed opacity-50" : ""
             }`}
           >
-            Next page
+            <AiOutlineArrowRight />
           </button>
         </div>
       )}

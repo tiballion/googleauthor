@@ -35,6 +35,7 @@ const Search = () => {
   }
 
   const handleChange = (e) => {
+    setIndex(0)
     setSearch(e.target.value)
   }
 

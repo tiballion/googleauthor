@@ -36,6 +36,8 @@ const Search = () => {
 
   const handleChange = (e) => {
     setIndex(0)
+    setBooks([])
+    setBooksCount(-1)
     setSearch(e.target.value)
   }
 
@@ -75,7 +77,9 @@ const Search = () => {
         </form>
       </div>
       <div className="ml-3 flex justify-center">
-        {booksCount === -1 ? null : booksCount === 0 ? (
+        {booksCount === -1 ? (
+          "Veuillez saisir le nom d'un auteur"
+        ) : booksCount === 0 ? (
           "Aucun résultat pour votre recherche"
         ) : (
           <p>{`${booksCount} résultats`}</p>

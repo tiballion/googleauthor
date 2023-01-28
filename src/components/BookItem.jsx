@@ -12,13 +12,13 @@ const BookItem = ({ book }) => {
           <img
             src={book.volumeInfo.imageLinks.thumbnail}
             alt={book.volumeInfo.title}
-            className="w-40 h-36 object-fit"
+            className="w-40 h-40 object-fit"
           />
         ) : (
           <img
             src="https://via.placeholder.com/150"
             alt={book.volumeInfo.title}
-            className="w-40 h-30"
+            className="w-40 h-40 object-fit"
           />
         )}
         <div className="flex flex-col items-center">

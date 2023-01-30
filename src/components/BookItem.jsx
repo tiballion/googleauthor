@@ -8,19 +8,15 @@ const BookItem = ({ book }) => {
         <h2 className="text-xl font-semibold text-center">
           {book.volumeInfo.title}
         </h2>
-        {book.volumeInfo.imageLinks ? (
-          <img
-            src={book.volumeInfo.imageLinks.thumbnail}
-            alt={book.volumeInfo.title}
-            className="w-40 h-40 object-fit"
-          />
-        ) : (
-          <img
-            src="https://via.placeholder.com/150"
-            alt={book.volumeInfo.title}
-            className="w-40 h-40 object-fit"
-          />
-        )}
+        <img
+          src={
+            book.volumeInfo.imageLinks
+              ? book.volumeInfo.imageLinks.thumbnail
+              : "https://via.placeholder.com/150"
+          }
+          alt={book.volumeInfo.title}
+          className="w-40 h-40 object-fit"
+        />
         <div className="flex flex-col items-center">
           {book.volumeInfo.authors ? (
             <p className="text-center">

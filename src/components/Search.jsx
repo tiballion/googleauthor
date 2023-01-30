@@ -3,6 +3,7 @@ import {
   AiOutlineArrowLeft,
   AiOutlineArrowRight,
   AiOutlineSearch,
+  AiOutlineHome,
 } from "react-icons/ai"
 import axios from "axios"
 import Books from "./Books"
@@ -32,6 +33,13 @@ const Search = () => {
     setBooksCount(response.data.totalItems)
   }
 
+  const handleClear = (e) => {
+    e.preventDefault()
+    setBooks([])
+    setBooksCount(-1)
+    setSearch("")
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     setIndex(0)
@@ -40,6 +48,7 @@ const Search = () => {
   }
 
   const handleChange = (e) => {
+    e.preventDefault()
     setIndex(0)
     setBooks([])
     setBooksCount(-1)
@@ -62,25 +71,33 @@ const Search = () => {
   return (
     <>
       <div className="p-2">
-        <form
-          onSubmit={handleSubmit}
-          className="flex justify-center align-middle items-center"
-        >
-          <label>
-            <input
-              type="text"
-              placeholder="Rechercher un livre"
-              className="p-2 m-1 rounded-md"
-              onChange={handleChange}
-            />
-          </label>
+        <div className="flex justify-center p-4">
           <button
-            type="submit"
+            onClick={handleClear}
             className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-1 border border-gray-400 rounded shadow"
           >
-            <AiOutlineSearch size={22} />
+            <AiOutlineHome size={22} />
           </button>
-        </form>
+          <form
+            onSubmit={handleSubmit}
+            className="flex justify-center align-middle items-center"
+          >
+            <label>
+              <input
+                type="text"
+                placeholder="Rechercher un livre"
+                className="p-2 m-1 rounded-md"
+                onChange={handleChange}
+              />
+            </label>
+            <button
+              type="submit"
+              className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-1 border border-gray-400 rounded shadow"
+            >
+              <AiOutlineSearch size={22} />
+            </button>
+          </form>
+        </div>
       </div>
       <div className="ml-3 flex justify-center">
         {booksCount === -1 ? (

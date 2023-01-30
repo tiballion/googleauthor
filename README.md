@@ -5,9 +5,10 @@ Un projet pour apprendre à utiliser l'API de Google Books.
 #### Comment lancer le projet :
 
 - Cloner le projet
-- `npm install`
+- `cd googleauthor`
+- `npm install` or `npm i`
 - `npm run dev`
-  Pour compiler le projet en mode production :
+Pour compiler le projet en mode production :
 - `npm run build`
 
 #### Technologies/modules utilisés :

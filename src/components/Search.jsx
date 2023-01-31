@@ -70,8 +70,8 @@ const Search = () => {
 
   return (
     <>
-      <div className="p-2">
-        <div className="flex justify-center p-4">
+      <div>
+        <div className="flex justify-center">
           <button
             onClick={handleClear}
             className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-1 border border-gray-400 rounded shadow"
@@ -105,7 +105,7 @@ const Search = () => {
         ) : booksCount === 0 ? (
           "Aucun résultat pour votre recherche"
         ) : (
-          <p>{`${booksCount} résultats`}</p>
+          <p>{`${booksCount} résultats pour ${search}`}</p>
         )}
       </div>
       {booksCount > 0 && <Books books={books} />}

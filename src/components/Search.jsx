@@ -15,11 +15,12 @@ const Search = () => {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
-    if (search === "") return
+    if (!search) return
     searchBook()
   }, [index])
 
   const searchBook = async () => {
+    if (!search) return
     const response = await axios.get(
       "https://www.googleapis.com/books/v1/volumes",
       {

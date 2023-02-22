@@ -6,7 +6,7 @@ Un projet pour apprendre à utiliser l'API de Google Books.
 
 - Cloner le projet
 - `cd googleauthor`
-- `npm install` or `npm i`
+- `npm i`
 - `npm run dev`
 
 Pour compiler le projet en mode production :
@@ -15,12 +15,14 @@ Pour compiler le projet en mode production :
 
 #### Technologies/modules utilisés :
 
+- Vite
 - React
+- Typescript
 - TailwindCSS
 - React Icons
 - Axios
 
 #### Problèmes encontrés :
 
-- Certains livres n'avait pas d'auteur ni d'image
-- On ne peut pas faire une requête à chaque fois que le texte dans l'input change, sinon on fait trop de requêtes à l'API. J'ai donc fait une requête à chaque fois que l'utilisateur appuie sur la touche entrée.
+- Certains livres n'avait ni d'auteur ni d'image
+- On ne peut pas faire une requête à chaque fois que le texte dans l'input change, sinon on fait trop de requêtes à l'API et les résultats sont inexacts. Il faut donc attendre que l'utilisateur ait fini de taper avant de faire la requête.

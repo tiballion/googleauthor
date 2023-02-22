@@ -4,7 +4,7 @@ Un projet pour apprendre à utiliser l'API de Google Books.
 
 #### Comment lancer le projet :
 
-- Cloner le projet
+- `git clone https://github.com/tiballion/googleauthor.git`
 - `cd googleauthor`
 - `npm i`
 - `npm run dev`

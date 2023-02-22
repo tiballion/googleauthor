@@ -1,4 +1,10 @@
-const BookItem = ({ book }) => {
+import { Book } from "../types"
+
+interface BookItemProps {
+  book: Book
+}
+
+export const BookItem = ({ book }: BookItemProps) => {
   return (
     <>
       <div
@@ -20,8 +26,10 @@ const BookItem = ({ book }) => {
         <div className="flex flex-col items-center">
           {book.volumeInfo.authors ? (
             <p className="text-center">
-              {book.volumeInfo.authors.map((author) => (
-                <span className="text-sm mx-1 rounded-md">{author}</span>
+              {book.volumeInfo.authors.map((author: string, id: number) => (
+                <span key={id} className="text-sm mx-1 rounded-md">
+                  {author}
+                </span>
               ))}
             </p>
           ) : (
@@ -33,5 +41,3 @@ const BookItem = ({ book }) => {
     </>
   )
 }
-
-export default BookItem

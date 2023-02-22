@@ -17,10 +17,10 @@ export const Main: React.FC = () => {
 
   useEffect(() => {
     if (!search) return
-    searchBook()
+    handleRequest()
   }, [index])
 
-  const searchBook = async () => {
+  const handleRequest = async () => {
     if (!search) return
     const response = await axios.get(
       "https://www.googleapis.com/books/v1/volumes",
@@ -45,7 +45,7 @@ export const Main: React.FC = () => {
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault()
     setIndex(0)
-    searchBook()
+    handleRequest()
     ;(e.target as HTMLFormElement).reset()
   }
 

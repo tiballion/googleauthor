@@ -8,7 +8,7 @@ export const BookItem = ({ book }: BookItemProps) => {
   return (
     <>
       <div
-        className="h-80 p-2 bg-zinc-800 hover:overflow-auto rounded-md flex flex-col justify-between items-center cursor-pointer border border-gray-700 hover:border-indigo-500"
+        className="h-80 p-2 bg-zinc-800 overflow-auto rounded-md flex flex-col justify-between items-center cursor-pointer border border-gray-700 hover:border-indigo-500"
         onClick={() => window.open(book.volumeInfo.infoLink)}
       >
         <h2 className="text-xl font-semibold text-center">

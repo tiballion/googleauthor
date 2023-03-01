@@ -80,13 +80,11 @@ export const Main: React.FC = () => {
 
   return (
     <>
-      <div>
-        <Search
-          handleClear={handleClear}
-          handleSubmit={handleSubmit}
-          handleChange={handleChange}
-        />
-      </div>
+      <Search
+        handleClear={handleClear}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+      />
       <div className="ml-3 flex justify-center">
         {booksCount === -1 ? (
           "Veuillez saisir le nom d'un auteur"

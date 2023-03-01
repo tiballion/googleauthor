@@ -129,7 +129,7 @@ export const Main: React.FC = () => {
             <button
               onClick={handlePreviousPage}
               className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2 ${
-                index < 10 ? "cursor-not-allowed opacity-50" : ""
+                index < 10 && "cursor-not-allowed opacity-50"
               }`}
             >
               <AiOutlineArrowLeft />
@@ -140,7 +140,7 @@ export const Main: React.FC = () => {
             <button
               onClick={handleNextPage}
               className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2 ${
-                booksCount < index + 10 ? "cursor-not-allowed opacity-50" : ""
+                booksCount < index + 10 && "cursor-not-allowed opacity-50"
               }`}
             >
               <AiOutlineArrowRight />

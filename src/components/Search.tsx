@@ -27,7 +27,7 @@ export const Search = ({
         <input
           type="text"
           placeholder="Rechercher un livre"
-          className="p-2 m-1 rounded-md appearance-none border border-gray-400 shadow-inner"
+          className="p-2 m-1 rounded-md appearance-none border border-gray-700 shadow-inner"
           onChange={handleChange}
         />
         <button

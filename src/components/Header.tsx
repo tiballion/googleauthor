@@ -1,7 +1,7 @@
 import { AiOutlineGithub } from "react-icons/ai"
 import { BsCodeSlash } from "react-icons/bs"
 
-export const Header = () => {
+export const Header: React.FC = () => {
   return (
     <header className="bg-zinc-800 p-3 m-2 rounded-md flex flex-col items-center text-center shadow-md">
       <h1 className="text-4xl">Google Author</h1>

@@ -24,14 +24,12 @@ export const Search = ({
         onSubmit={handleSubmit}
         className="flex justify-center align-middle items-center"
       >
-        <label>
-          <input
-            type="text"
-            placeholder="Rechercher un livre"
-            className="p-2 m-1 rounded-md"
-            onChange={handleChange}
-          />
-        </label>
+        <input
+          type="text"
+          placeholder="Rechercher un livre"
+          className="p-2 m-1 rounded-md appearance-none border border-gray-400 shadow-inner"
+          onChange={handleChange}
+        />
         <button
           type="submit"
           className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-1 border border-gray-400 rounded shadow"

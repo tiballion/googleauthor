@@ -1,12 +1,8 @@
 import React, { useState, useEffect, SyntheticEvent } from "react"
-import {
-  AiOutlineArrowLeft,
-  AiOutlineArrowRight,
-  AiOutlineSearch,
-  AiOutlineHome,
-} from "react-icons/ai"
 import axios from "axios"
 import { Books } from "./Books"
+import { Pagination } from "./Pagination"
+import { Search } from "./Search"
 import { Book } from "../types"
 
 export const Main: React.FC = () => {
@@ -85,33 +81,11 @@ export const Main: React.FC = () => {
   return (
     <>
       <div>
-        <div className="flex justify-center">
-          <button
-            onClick={handleClear}
-            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-1 border border-gray-400 rounded shadow"
-          >
-            <AiOutlineHome size={22} />
-          </button>
-          <form
-            onSubmit={handleSubmit}
-            className="flex justify-center align-middle items-center"
-          >
-            <label>
-              <input
-                type="text"
-                placeholder="Rechercher un livre"
-                className="p-2 m-1 rounded-md"
-                onChange={handleChange}
-              />
-            </label>
-            <button
-              type="submit"
-              className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-1 border border-gray-400 rounded shadow"
-            >
-              <AiOutlineSearch size={22} />
-            </button>
-          </form>
-        </div>
+        <Search
+          handleClear={handleClear}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+        />
       </div>
       <div className="ml-3 flex justify-center">
         {booksCount === -1 ? (
@@ -125,27 +99,12 @@ export const Main: React.FC = () => {
       {booksCount > 0 && (
         <>
           <Books books={books} />
-          <div className="p-2 flex items-center justify-center">
-            <button
-              onClick={handlePreviousPage}
-              className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2 ${
-                index < 10 && "cursor-not-allowed opacity-50"
-              }`}
-            >
-              <AiOutlineArrowLeft />
-            </button>
-            <h4>{`${Math.floor(index / 10) + 1}/${
-              Math.floor(booksCount / 10) + 1
-            }`}</h4>
-            <button
-              onClick={handleNextPage}
-              className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2 ${
-                booksCount < index + 10 && "cursor-not-allowed opacity-50"
-              }`}
-            >
-              <AiOutlineArrowRight />
-            </button>
-          </div>
+          <Pagination
+            booksCount={booksCount}
+            index={index}
+            handleNextPage={handleNextPage}
+            handlePreviousPage={handlePreviousPage}
+          />
         </>
       )}
     </>

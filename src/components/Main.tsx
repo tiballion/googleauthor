@@ -1,4 +1,4 @@
-import React, { useState, useEffect, SyntheticEvent } from "react"
+import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { Book } from "../types"
 import { Books, Pagination, Search } from "./components"

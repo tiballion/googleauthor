@@ -89,20 +89,18 @@ export const Main: React.FC = () => {
         ) : booksCount === 0 ? (
           "Aucun résultat pour votre recherche"
         ) : (
-          <p>{`${booksCount} résultats pour ${search}`}</p>
+          <div className="flex flex-col items-center">
+            <p>{`${booksCount} résultats pour ${search}`}</p>
+            <Books books={books} />
+            <Pagination
+              booksCount={booksCount}
+              index={index}
+              handleNextPage={handleNextPage}
+              handlePreviousPage={handlePreviousPage}
+            />
+          </div>
         )}
       </div>
-      {booksCount > 0 && (
-        <>
-          <Books books={books} />
-          <Pagination
-            booksCount={booksCount}
-            index={index}
-            handleNextPage={handleNextPage}
-            handlePreviousPage={handlePreviousPage}
-          />
-        </>
-      )}
     </>
   )
 }

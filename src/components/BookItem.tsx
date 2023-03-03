@@ -8,7 +8,7 @@ export const BookItem = ({ book }: BookItemProps) => {
   return (
     <>
       <div
-        className="h-80 p-2 bg-zinc-800 overflow-hidden hover:overflow-auto rounded-md flex flex-col justify-between items-center cursor-pointer border border-gray-700 hover:border-indigo-500"
+        className="h-{100} p-2 bg-zinc-800 overflow-hidden hover:overflow-auto rounded-md flex flex-col justify-between items-center cursor-pointer border border-gray-700 hover:border-indigo-500"
         onClick={() => window.open(book.volumeInfo.infoLink)}
       >
         <h2 className="text-xl font-semibold text-center">
@@ -27,15 +27,26 @@ export const BookItem = ({ book }: BookItemProps) => {
           {book.volumeInfo.authors ? (
             <p className="text-center">
               {book.volumeInfo.authors.map((author: string, id: number) => (
-                <span key={id} className="text-sm mx-1 rounded-md">
+                <span key={id} className="mx-1 rounded-md underline">
                   {author}
                 </span>
               ))}
+              - <span>{book.volumeInfo.publishedDate}</span>
             </p>
           ) : (
-            <p className="text-sm">Auteur inconnu</p>
+            <p className="text">Auteur inconnu</p>
           )}
-          <p className="text-sm">{book.volumeInfo.publishedDate}</p>
+          <p className="text-center">
+            {book.volumeInfo.description.length > 100 ? (
+              <span className="text-sm text-center">
+                {book.volumeInfo.description.slice(0, 100)}...
+              </span>
+            ) : (
+              <span className="text-sm text-center">
+                {book.volumeInfo.description}
+              </span>
+            )}
+          </p>
         </div>
       </div>
     </>

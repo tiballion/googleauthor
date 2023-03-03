@@ -1,5 +1,4 @@
-import { Header } from "./components/Header"
-import { Main } from "./components/Main"
+import { Header, Main } from "./components/components"
 
 const App: React.FC = () => {
   return (

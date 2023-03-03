@@ -1,9 +1,7 @@
 import React, { useState, useEffect, SyntheticEvent } from "react"
 import axios from "axios"
-import { Books } from "./Books"
-import { Pagination } from "./Pagination"
-import { Search } from "./Search"
 import { Book } from "../types"
+import { Books, Pagination, Search } from "./components"
 
 export const Main: React.FC = () => {
   const [search, setSearch] = useState<string>("")

@@ -1,4 +1,4 @@
-import { BookItem } from "./BookItem"
+import { BookItem } from "./components"
 import { Book } from "../types"
 
 interface BooksProps {

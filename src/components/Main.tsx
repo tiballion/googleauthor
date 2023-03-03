@@ -29,59 +29,14 @@ export const Main: React.FC = () => {
     setBooksCount(response.data.totalItems)
   }
 
-  const handleClear = (e: SyntheticEvent) => {
-    e.preventDefault()
-    setBooks([])
-    setBooksCount(-1)
-    setSearch("")
-  }
-
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault()
-    setIndex(0)
-    handleRequest()
-    ;(e.target as HTMLFormElement).reset()
-  }
-
-  const handleChange = (e: SyntheticEvent) => {
-    e.preventDefault()
-    setIndex(0)
-    setBooks([])
-    setBooksCount(-1)
-    setSearch((e.target as HTMLInputElement).value)
-  }
-
-  const handleNextPage = (e: SyntheticEvent) => {
-    e.preventDefault()
-    if (booksCount < index + 10) return
-    setIndex((index) => index + 10)
-    if (window.innerWidth < 768)
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      })
-  }
-
-  const handlePreviousPage = (e: any) => {
-    e.preventDefault()
-    if (index === 0) return
-    if (index < 10) setIndex(0)
-    setIndex((index) => index - 10)
-    if (window.innerWidth < 768)
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      })
-  }
-
   return (
     <>
       <Search
-        handleClear={handleClear}
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
+        setBooks={setBooks}
+        setBooksCount={setBooksCount}
+        setSearch={setSearch}
+        setIndex={setIndex}
+        handleRequest={handleRequest}
       />
       <div className="ml-3 flex justify-center">
         {booksCount === -1 ? (
@@ -95,8 +50,7 @@ export const Main: React.FC = () => {
             <Pagination
               booksCount={booksCount}
               index={index}
-              handleNextPage={handleNextPage}
-              handlePreviousPage={handlePreviousPage}
+              setIndex={setIndex}
             />
           </div>
         )}

@@ -1,17 +1,44 @@
 import { SyntheticEvent } from "react"
 import { AiOutlineHome, AiOutlineSearch } from "react-icons/ai"
+import { Book } from "../types"
 
 interface SearchProps {
-  handleClear: (e: SyntheticEvent) => void
-  handleSubmit: (e: SyntheticEvent) => void
-  handleChange: (e: SyntheticEvent) => void
+  setBooks: (books: Array<Book>) => void
+  setBooksCount: (booksCount: number) => void
+  setSearch: (search: string) => void
+  setIndex: (index: number) => void
+  handleRequest: () => void
 }
 
 export const Search = ({
-  handleClear,
-  handleSubmit,
-  handleChange,
+  setBooks,
+  setBooksCount,
+  setSearch,
+  setIndex,
+  handleRequest,
 }: SearchProps) => {
+  const handleClear = (e: SyntheticEvent) => {
+    e.preventDefault()
+    setBooks([])
+    setBooksCount(-1)
+    setSearch("")
+  }
+
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault()
+    setIndex(0)
+    handleRequest()
+    ;(e.target as HTMLFormElement).reset()
+  }
+
+  const handleChange = (e: SyntheticEvent) => {
+    e.preventDefault()
+    setIndex(0)
+    setBooks([])
+    setBooksCount(-1)
+    setSearch((e.target as HTMLInputElement).value)
+  }
+
   return (
     <div className="flex justify-center">
       <button

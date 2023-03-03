@@ -4,16 +4,39 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
 interface PaginationProps {
   booksCount: number
   index: number
-  handleNextPage: (e: SyntheticEvent) => void
-  handlePreviousPage: (e: SyntheticEvent) => void
+  setIndex: (index: number) => void
 }
 
 export const Pagination = ({
   booksCount,
   index,
-  handleNextPage,
-  handlePreviousPage,
+  setIndex,
 }: PaginationProps) => {
+  const handlePreviousPage = (e: SyntheticEvent) => {
+    e.preventDefault()
+    if (index === 0) return
+    if (index < 10) setIndex(0)
+    setIndex(index - 10)
+    if (window.innerWidth < 768)
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      })
+  }
+
+  const handleNextPage = (e: SyntheticEvent) => {
+    e.preventDefault()
+    if (booksCount < index + 10) return
+    setIndex(index + 10)
+    if (window.innerWidth < 768)
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      })
+  }
+
   return (
     <div className="p-2 flex items-center justify-center">
       <button

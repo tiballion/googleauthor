@@ -37,7 +37,8 @@ export const BookItem = ({ book }: BookItemProps) => {
             <p className="text">Auteur inconnu</p>
           )}
           <p className="text-center">
-            {book.volumeInfo.description.length > 100 ? (
+            {book.volumeInfo.description &&
+            book.volumeInfo.description.length > 100 ? (
               <span className="text-sm text-center">
                 {book.volumeInfo.description.slice(0, 100)}...
               </span>

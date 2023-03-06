@@ -10,13 +10,13 @@ interface SearchProps {
   handleRequest: () => void
 }
 
-export const Search = ({
+export const Search: React.FC<SearchProps> = ({
   setBooks,
   setBooksCount,
   setSearch,
   setIndex,
   handleRequest,
-}: SearchProps) => {
+}) => {
   const handleClear = (e: SyntheticEvent) => {
     e.preventDefault()
     setBooks([])

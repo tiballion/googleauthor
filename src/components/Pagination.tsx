@@ -7,11 +7,11 @@ interface PaginationProps {
   setIndex: (index: number) => void
 }
 
-export const Pagination = ({
+export const Pagination: React.FC<PaginationProps> = ({
   booksCount,
   index,
   setIndex,
-}: PaginationProps) => {
+}) => {
   const handlePreviousPage = (e: SyntheticEvent) => {
     e.preventDefault()
     if (index === 0) return

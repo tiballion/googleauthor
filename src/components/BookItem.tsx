@@ -1,10 +1,11 @@
+import React from "react"
 import { Book } from "../types"
 
 interface BookItemProps {
   book: Book
 }
 
-export const BookItem = ({ book }: BookItemProps) => {
+export const BookItem: React.FC<BookItemProps> = ({ book }) => {
   return (
     <>
       <div

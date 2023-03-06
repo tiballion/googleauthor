@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { Book } from "../types"
-import { Books, Pagination, Search } from "./components"
+import { Books, Pagination, Search } from "."
 
 export const Main: React.FC = () => {
   const [search, setSearch] = useState<string>("")

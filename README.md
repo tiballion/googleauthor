@@ -25,4 +25,16 @@ Pour compiler le projet en mode production :
 #### Problèmes encontrés :
 
 - Certains livres n'avait ni d'auteur ni d'image
-- On ne peut pas faire une requête à chaque fois que le texte dans l'input change, sinon on fait trop de requêtes à l'API et les résultats sont inexacts. Il faut donc attendre que l'utilisateur ait fini de taper avant de faire la requête.
+- On ne peut pas faire une requête à chaque fois que le texte dans l'input change, sinon on fait trop de requêtes à l'API et les résultats sont inexacts et peuvent différer. Il faut donc attendre que l'utilisateur ait fini de taper avant de faire la requête.
+
+#### Structure du projet :
+
+```text
+┌ Header
+├ Main
+│ ├ Search
+│ ├ Books
+│ │ └ BookItem
+│ └ Pagination
+└
+```
